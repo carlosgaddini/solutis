@@ -1,0 +1,26 @@
+{
+  "name": "solutis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carlosgaddini/solutis.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carlosgaddini/solutis/issues"
+  },
+  "homepage": "https://github.com/carlosgaddini/solutis#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
