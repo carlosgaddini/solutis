@@ -22,3 +22,10 @@ Crie uma API com as seguintes características:
 
  - Desenvolver um teste de integração que verifica se a api esta retornando por padrão o formato json
 
+ #Documentação/Testes de Integração
+    (via swagger)
+    http://localhost:3000/api-docs
+    (via postman)
+    importar arquivo solutis.postman_collection.json
+ 
+

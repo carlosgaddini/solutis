@@ -6,39 +6,57 @@
 	},
 	"item": [
 		{
-			"name": "get customers by type",
+			"name": "get customers by invalid type",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/customers/type/J",
+					"raw": "localhost:3000/customers/person/P",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
 						"customers",
-						"type",
-						"J"
+						"person",
+						"P"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "get customer by id",
+			"name": "get customer by invalid id",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/customers/1",
+					"raw": "localhost:3000/customers/9",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
 						"customers",
-						"1"
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "health check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/health",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"health"
 					]
 				}
 			},
@@ -57,6 +75,45 @@
 					"port": "3000",
 					"path": [
 						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get customer by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/customers/2",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"customers",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get customers by type",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/customers/person/F",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"customers",
+						"person",
+						"F"
 					]
 				}
 			},

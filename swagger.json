@@ -1,0 +1,150 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "Solutis Customers API",
+      "description": "API para retorno de Clientes",
+      "version": "v00",
+      "contacts" : {
+          "email": "carlosgaddini@gmail.com"
+      }
+    },
+    "paths": {
+      "/customers": {
+        "get": {
+            "summary": "Lista de Clientes",
+            "desciption": "Retorna todos os clientes cadastrados",
+            "tags": ["Customers"],
+            "responses": {
+                "200": {
+                    "description": "Resposta OK",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "$ref": "#/components/schemas/Customers"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+      },
+      "/customers/{id}": {
+        "get": {
+            "summary": "Busca Cliente por ID",
+            "desciption": "Retorna os dados de um cliente especifico",
+            "tags": ["Customers"],
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "description": "ID necessário para busca",
+                    "required": true
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "Resposta OK",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "$ref": "#/components/schemas/Customers"
+                            }
+                        }
+                    }
+                },
+                "400": {
+                    "description": "ID inválido"
+                },
+                "404": {
+                    "description": "Cliente Não Encontrado"
+                }
+            }
+        }
+      },
+      "/customers/person/{type}": {
+        "get": {
+            "summary": "Busca Clientes por Tipo de Pessoa",
+            "desciption": "Retorna os clientes de um tipo especifico",
+            "tags": ["Customers"],
+            "parameters": [
+                {
+                    "name": "type",
+                    "in": "path",
+                    "description": "Tipo de Pessoa necessário para busca (F ou J)",
+                    "required": true
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "Resposta OK",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "$ref": "#/components/schemas/Customers"
+                            }
+                        }
+                    }
+                },
+                "400": {
+                    "description": "Tipo Inválido"
+                },
+                "404": {
+                    "description": "Nenhum Cliente Encontrado deste Tipo"
+                }
+            }
+        }
+      },
+      "/health": {
+        "get": {
+            "summary": "Health Check",
+            "desciption": "Rota para saber se está tudo bem :)",
+            "tags": ["Customers"],
+            "responses": {
+                "200": {
+                    "description": "Resposta OK"
+                }
+            }
+        }
+      },
+    "consumes": [
+      "application/json"
+    ],
+    "servers": [
+        {
+            "url" : "http://localhost/3000"
+        }
+        
+    ]
+  },
+  "components" : {
+      "schemas" : {
+          "Customers" : {
+              "type": "object",
+              "properties": {
+                  "id": {
+                      "type": "number"
+                  },
+                  "person": {
+                      "type": "string"
+                  },
+                  "document": {
+                      "type": "string"
+                  },
+                  "name": {
+                      "type": "string"
+                  },
+                  "address": {
+                      "type": "string"
+                  },
+                  "phone": {
+                      "type": "string"
+                  }
+              }
+
+          }
+      }
+  }
+}
